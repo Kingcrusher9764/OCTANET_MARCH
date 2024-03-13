@@ -1,0 +1,188 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("../images/bg_img3.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container{
+    width: 400px;
+    height: auto;
+    min-height: 400px;
+    padding: 30px;
+    background: transparent;
+    border: 2px solid cyan;
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+}
+
+h1{
+    text-align: center;
+    color: cyan;
+    margin-bottom: 36px;
+}
+
+.input__container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.todo__input{
+    flex: 1;
+    outline: none;
+    padding: 10px 10px 10px 20px;
+    background-color: transparent;
+    border: 2px solid cyan;
+    border-radius: 20px;
+    color: cyan;
+    font-size: 16px;
+    margin-right: 10px;
+}
+.todo__input::placeholder{
+    color: cyan;
+}
+
+.add__button{
+    border: 2px solid cyan;
+    outline: none;
+    background-color: rgb(21, 56, 56);
+    color: cyan;
+    border-radius: 20px;
+    padding: 0px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.todo{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(21, 56, 56);
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px 12px;
+    border: 1px solid cyan;
+    transition: all 0.2s ease;
+}
+
+.todo:first-child{
+    margin-top: 0;
+}
+.todo:last-child{
+    margin-bottom: 0;
+}
+.todo:hover{
+    background-color: rgb(39, 102, 102);
+}
+.todo label{
+    cursor: pointer;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    color: cyan;
+}
+.todo span{
+    margin-left: 20px;
+    position: relative;
+    cursor: pointer;
+}
+span::before{
+    content: "";
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin-left: -30px;
+    border-radius: 100px;
+    border: 1px solid cyan;
+}
+
+input[type="checkbox"]{
+    visibility: hidden;
+}
+
+input:checked + span{
+    text-decoration: line-through;
+}
+
+.todo:hover input:checked + span::before, input:checked + span::before{
+    background: url("../images/check.png") 50% 50% no-repeat transparent;
+    border-color: rgb(64, 110, 110);
+}
+
+.todo:hover span::before{
+    border-color: rgb(33, 146, 146);
+}
+
+.todo .delete__button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: cyan;
+    /* font-size: 24px; */
+}
+
+.todo__container{
+    height: 300px;
+    overflow: overlay;
+}
+
+.todo__container::-webkit-scrollbar-track{
+    background: cyan;
+    border-radius: 20px;
+}
+.todo__container::-webkit-scrollbar{
+    width: 0;
+}
+.todo__container:hover::-webkit-scrollbar{
+    width: 5px;
+}
+.todo__container::-webkit-scrollbar-thumb{
+    background: rgb(39, 136, 136);
+    border-radius: 20px;
+}
+
+.filters{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.filter{
+    color: cyan;
+    padding: 5px 15px;
+    border-radius: 100px;
+    border: 1px solid cyan;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter .active, .filter:hover{
+    background-color: rgb(25, 82, 82);
+}
+
+.delete__all{
+    display: flex;
+    color: cyan;
+    padding: 7px 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.delete__all:hover{
+    border-radius: 5px;
+    background-color: rgb(25, 82, 82);
+}
